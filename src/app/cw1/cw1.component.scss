@@ -1,12 +1,22 @@
 button {
-    margin-left: 10px; padding: 5px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px; padding: 8px;
+    border-radius: 5px;
     }
     .color-black { color: black;
     }
     .color-brown { color: brown;
     }
+    .button-color-before { background-color: cadetblue;
+    }
+    .button-color-after { background-color: darkgoldenrod;
+    }
 
 input {
     margin: 5px 10px;
     width: 300px;
+}
+p {
+    margin: 5px 0 0 10px;
 }
