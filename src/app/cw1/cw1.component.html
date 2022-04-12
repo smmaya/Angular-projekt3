@@ -1,0 +1,19 @@
+<div class="m-3">
+    <h3 [className]="zmienKolor">Wprowadzenie do Angulara</h3>
+    <div>
+        <input class="d-inline-flex form-control" [disabled]="isDisabled" (focus)="onFocus()">
+    </div>
+    <div>
+        <input class="d-inline-flex form-control" [disabled]="isDisabled" (click)="onClick($event)">
+    </div>
+    <div>
+        <input class="d-inline-flex form-control" [disabled]="isDisabled" (mousemove)="onMouseMove($event)">
+    </div>
+    <!-- <div class="d-inline-flex"> -->
+        <input class="d-inline-flex form-control" [disabled]="isDisabled" (paste)="onPaste()">
+        <span>{{ inputText }}</span>
+    <!-- </div> -->
+    <div>
+        <button class="btn btn-outline-secondary mt-3" (click)="zmienUstawienia()">edytuj</button>
+    </div>
+</div>
