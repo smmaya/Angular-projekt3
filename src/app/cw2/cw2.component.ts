@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Cw2Component implements OnInit {
 
+  imie = '';
+  nazwisko = '';
+  wiek = 75;
+  result = '';
+
+  onClick() {
+    this.result = this.imie + ' ' + this.nazwisko + ' ' + this.wiek;
+  }
+
+  clearResult() {
+    this.result = '';
+  }
+
   constructor() { }
 
   ngOnInit(): void {

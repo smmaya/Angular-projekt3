@@ -1,1 +1,21 @@
-<p>cw2 works!</p>
+<div class="m-4">
+    <h5>Użycie ngModel</h5>
+    <p>Imię ucznia to: {{ imie }} {{ nazwisko }} {{ wiek }}</p>
+    <div>
+        <label for="student">Imię: </label>
+        <input [(ngModel)]="imie">
+    </div>
+    <div>
+        <label for="student">Nazwisko: </label>
+        <input [(ngModel)]="nazwisko">
+    </div>
+    <div>
+        <label for="student">Wiek: </label>
+        <input [(ngModel)]="wiek">
+    </div>
+</div>
+<div class="m-4">
+    <button class="btn btn-secondary" (click)="onClick()">Wypisz zawartość</button>
+    <button class="btn btn-secondary" (click)="clearResult()">Wyczyść zawartość</button>
+    <p>To co wpiszesz, pojawi się tu: <b>{{ result }}</b></p>
+</div>
