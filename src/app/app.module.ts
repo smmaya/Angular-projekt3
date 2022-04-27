@@ -9,6 +9,7 @@ import { Cw4Component } from './cw4/cw4.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { StudenciViewComponent } from './studenci-view/studenci-view.component';
+import { SamochodyComponent } from './samochody/samochody.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { StudenciViewComponent } from './studenci-view/studenci-view.component';
     Cw2Component,
     Cw3Component,
     Cw4Component,
-    StudenciViewComponent
+    StudenciViewComponent,
+    SamochodyComponent
   ],
   imports: [
     BrowserModule,
