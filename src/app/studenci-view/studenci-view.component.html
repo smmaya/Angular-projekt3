@@ -1,8 +1,8 @@
 <div class="m-2">
     <h5>Ćwiczenie 3.</h5>
     <div>Zadania 1-2</div>
-    <h5 class="mt-2">Studenci:</h5>
-    <div class="m-2" *ngIf="studenciItems">
+    <h5>Studenci:</h5>
+    <div *ngIf="studenciItems">
         <div *ngFor="let student of studenciItems; let i = index">
             {{ i + 1 }} {{ student }}
         </div>

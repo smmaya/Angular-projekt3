@@ -1,6 +1,6 @@
 <h5 class="m-2">{{ tytul }}</h5>
 <div class="m-2" *ngIf="samochodyItems">
     <div *ngFor="let samochod of samochodyItems; let i = index">
-        {{ i + 1 }} {{ samochod.marka }} {{ samochod.model }} {{ samochod.rok }}
+        {{ i + 1 }} {{ samochod.marka }} - {{ samochod.model }}, rocznik: {{ samochod.rok }}
     </div>
 </div>
