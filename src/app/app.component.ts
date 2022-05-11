@@ -8,10 +8,12 @@ import { Samochod } from './samochod';
 })
 export class AppComponent {
   title = 'projekt3';
-  studenci = ['Karol', 'Basia', 'Adam', 'Teresa', 'Wojciech', 'Ziemowit'];
+  studenci: string[];
+  isCreated = false;
+
   samochody: Samochod[] = [
     {
-      marka: 'AUDI',
+      marka: 'Audi',
       model: 'RS7',
       rok: 2020
     },
@@ -22,12 +24,12 @@ export class AppComponent {
     },
     {
       marka: 'Mercedes',
-      model: 'KLASA G',
+      model: 'Klasa G',
       rok: 2018
     },
     {
       marka: 'BMW',
-      model: 'SERIA 3',
+      model: 'Seria 3',
       rok: 2020
     },
     {
@@ -36,5 +38,36 @@ export class AppComponent {
       rok: 2019
     }
   ];
-  
+
+  ngOnInit(): void {
+    this.studenci = ['Karol', 'Basia', 'Adam', 'Teresa', 'Wojciech', 'Ziemowit'];
+  }
+
+  onAddStudent(student: string) {
+    if (this.studenci.includes(student)) {
+      this.isCreated = true;
+    }
+    else {
+      this.isCreated = false;
+      this.studenci.push(student);
+    }
+  }
+  onUsunStudent(index: number) {
+    this.isCreated = false;
+    this.studenci.splice(index, 1);
+  }
+
+  onAddSamochod(samochod: Samochod) {
+    if (this.samochody.includes(samochod)) {
+      this.isCreated = true;
+    }
+    else {
+      this.isCreated = false;
+      this.samochody.push(samochod);
+    }
+  }
+  onUsunSamochod(index: number) {
+    this.isCreated = false;
+    this.samochody.splice(index, 1);
+  }
 }

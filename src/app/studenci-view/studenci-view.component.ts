@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-studenci-view',
@@ -8,10 +8,20 @@ import { Component, OnInit, Input } from '@angular/core';
 export class StudenciViewComponent implements OnInit {
 
   @Input() studenciItems: string[] = [];
+  @Output() usunUcznia: EventEmitter<number> = new EventEmitter<number>();
+  @Output() dodajUcznia: EventEmitter<string> = new EventEmitter<string>();
+  
+  student: string;
 
-  constructor() { }
+  ngOnInit(): void { }
 
-  ngOnInit(): void {
+  usunStudenta(index: number) {
+    this.usunUcznia.emit(index);
   }
 
+  dodajStudenta() {
+    this.dodajUcznia.emit(this.student);
+    this.student = '';
+  }
 }
+

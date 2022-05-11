@@ -4,20 +4,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Cw1Component } from './cw1/cw1.component';
 import { Cw2Component } from './cw2/cw2.component';
-import { Cw3Component } from './cw3/cw3.component';
-import { Cw4Component } from './cw4/cw4.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { StudenciViewComponent } from './studenci-view/studenci-view.component';
 import { SamochodyComponent } from './samochody/samochody.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     Cw1Component,
     Cw2Component,
-    Cw3Component,
-    Cw4Component,
     StudenciViewComponent,
     SamochodyComponent
   ],
@@ -25,7 +23,9 @@ import { SamochodyComponent } from './samochody/samochody.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

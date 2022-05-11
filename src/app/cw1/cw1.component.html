@@ -1,8 +1,8 @@
-<div class="m-3">
-    <h5>Ćwiczenie 1.</h5>
-    <div>Zadania 1-4</div>
+<div class="container mb-4">
+    <h4>Ćwiczenie 1.</h4>
+    <h6>Zadania 1-4</h6>
     <div>
-        <h3 [className]="zmienKolor">Wprowadzenie do Angulara</h3>
+        <h5 [className]="zmienKolor">Wprowadzenie do Angulara</h5>
         <input class="d-inline-flex form-control" [disabled]="isDisabled" (focus)="onFocus()">
     </div>
     <div>
@@ -11,10 +11,8 @@
     <div>
         <input class="d-inline-flex form-control" [disabled]="isDisabled" (mousemove)="onMouseMove($event)">
     </div>
-    <!-- <div class="d-inline-flex"> -->
     <input class="d-inline-flex form-control" [disabled]="isDisabled" (paste)="onPaste()">
     <span>{{ inputText }}</span>
-    <!-- </div> -->
     <div>
         <button (click)="zmienUstawienia()">edytuj</button>
         <button [className]="changeButtonColor" (click)="onClick($event)" style="width: 220px;">Change the
@@ -22,15 +20,15 @@
     </div>
     <div>
         <br>
-        <p>Kliknij w pole tekstowe poniej a kolor buttona wróci do początkowej wersji.</p>
+        <div>Kliknij w pole tekstowe poniej a kolor buttona wróci do początkowej wersji.</div>
         <input class="form-control" (focus)="zmienKolorButona()">
     </div>
     <div>
         <br>
-        <p>Wpisz coś do tego pola tekstowego i wciśnij przycisk lub Enter</p>
+        <div>Wpisz coś do tego pola tekstowego i wciśnij przycisk lub Enter</div>
         <input class="d-inline-flex form-control" #box (keyup.enter)="update(box.value)" (blur)="update(box.value)">
         <button (click)="update(box.value)">Wypisz zawartość pola</button>
-        <br>
-        <p>To co wpiszesz, pojawi się tu: <b>{{ inputText3 }}</b></p>
+        <br><br>
+        <div>To co wpiszesz, pojawi się tu: <b>{{ inputText3 }}</b></div>
     </div>
 </div>

@@ -1,7 +1,24 @@
-<app-cw1></app-cw1>
-<app-cw2></app-cw2>
-<app-studenci-view [studenciItems]="studenci"></app-studenci-view>
-<app-samochody [samochodyItems]="samochody"></app-samochody>
-<app-cw3></app-cw3>
-<app-cw4></app-cw4>
-<router-outlet></router-outlet>
+<div class="container">
+    <div class="row">
+        <div class="col-sm border border-secondary shadow p-3 m-2 bg-white rounded">
+            <app-cw1></app-cw1>
+        </div>
+        <div class="col-sm border border-secondary shadow p-3 m-2 bg-white rounded">
+            <app-cw2></app-cw2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm border border-secondary shadow p-3 m-2 bg-white rounded">
+            <app-studenci-view [studenciItems]="studenci" (dodajUcznia)="onAddStudent($event)"
+                (usunUcznia)="onUsunStudent($event)">
+            </app-studenci-view>
+            <div class="m-3" *ngIf="isCreated" [ngStyle]="{color: 'red'}">Student już istnieje!</div>
+        </div>
+        <div class="col-sm border border-secondary shadow p-3 m-2 bg-white rounded">
+            <app-samochody [samochodyItems]="samochody" (addSamochod)="onAddSamochod($event)"
+                (usunSamochod)="onUsunSamochod($event)">
+            </app-samochody>
+            <div class="m-3" *ngIf="isCreated" [ngStyle]="{color: 'red'}">Samochód już istnieje!</div>
+        </div>
+    </div>
+</div>

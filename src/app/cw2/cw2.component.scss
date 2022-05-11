@@ -1,13 +1,35 @@
-button {
-    margin-right: 10px;
-    height: fit-content;
+h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 18px;
+    color: brown;
 }
 
-p {
-    margin: 10px 0 10px 0;
+h5 {
+    margin-top: 10px;
+    margin-bottom: 3px;
+    font-weight: 400;
+    font-size: 16px;
+    color: blue;
+}
+
+h6 {
+    margin: 0 0 2px 0;
+    font-weight: bold;
+}
+
+button {
+    margin: 5px;
+    padding: 3px;
+    line-height: 20px;
 }
 
 label {
     text-align: right;
     margin-right: 10px;
+}
+
+.divider{
+    display:inline-block;
 }

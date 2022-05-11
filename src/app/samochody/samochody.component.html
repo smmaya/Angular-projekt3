@@ -1,6 +1,66 @@
-<h5 class="m-2">{{ tytul }}</h5>
-<div class="m-2" *ngIf="samochodyItems">
-    <div *ngFor="let samochod of samochodyItems; let i = index">
-        {{ i + 1 }} {{ samochod.marka }} - {{ samochod.model }}, rocznik: {{ samochod.rok }}
+<div class="container">
+    <h4>Ćwiczenie 4.</h4>
+    <h6>Zadania 1-2</h6>
+    <h5>{{ tytul }}</h5>
+    <div *ngIf="samochodyItems">
+        <div *ngFor="let samochod of samochodyItems; let i = index">
+            {{ i + 1 }} {{ samochod.marka }} - {{ samochod.model }}, rocznik: {{ samochod.rok }}
+        </div>
+    </div>
+</div>    
+<div class="container">
+<h5>Samochody:</h5>
+</div>
+<div class="container text-center">
+    <table class="table table-sm table-light table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Marka</th>
+                <th scope="col">Model</th>
+                <th scope="col">Rocznik</th>
+                <th scope="col">Admin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let samochod of samochodyItems; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ samochod.marka }}</td>
+                <td>{{ samochod.model }}</td>
+                <td>{{ samochod.rok }}</td>
+                <td><button btn btn-sm mat-raised-button [color]="i%2 ? 'primary' : 'accent'"
+                        (click)="usunAuto(i)">Usuń</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container mb-4">
+    <div class="row pb-1">
+        <button class="p-2 mb-3" mat-raised-button color="primary"
+            *ngIf="!!samochod?.marka?.length && !!samochod?.model?.length && !!samochod?.rok?.toString"
+            (click)="dodajAuto()">Dodaj samochód</button>
+        <div class="col-sm-6">
+            <label>Podaj nazwę samochodu: </label>
+        </div>
+        <div class="col-sm-6">
+            <input [(ngModel)]="samochod.marka">
+        </div>
+    </div>
+    <div class="row pb-1">
+        <div class="col-sm-6">
+            <label>Podaj markę samochodu: </label>
+        </div>
+        <div class="col-sm-6">
+            <input [(ngModel)]="samochod.model">
+        </div>
+    </div>
+    <div class="row pb-1">
+        <div class="col-sm-6">
+            <label>Podaj rok produkcji: </label>
+        </div>
+        <div class="col-sm-6">
+            <input [(ngModel)]="samochod.rok">
+        </div>
     </div>
 </div>

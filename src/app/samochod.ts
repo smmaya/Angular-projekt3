@@ -1,5 +1,5 @@
 export class Samochod { 
-    marka?: string;
-    model?: string;
-    rok?: number;
+    marka: string;
+    model: string;
+    rok: number;
     }
