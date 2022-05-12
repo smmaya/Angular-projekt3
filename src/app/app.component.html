@@ -18,7 +18,7 @@
             <app-samochody [samochodyItems]="samochody" (addSamochod)="onAddSamochod($event)"
                 (usunSamochod)="onUsunSamochod($event)">
             </app-samochody>
-            <div class="m-3" *ngIf="isCreated" [ngStyle]="{color: 'red'}">Samochód już istnieje!</div>
+            <div class="m-3" *ngIf="isInArray" [ngStyle]="{color: 'red'}">Samochód już istnieje!</div>
         </div>
     </div>
 </div>
