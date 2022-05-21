@@ -15,32 +15,13 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.studenci = ['Karol', 'Basia', 'Adam', 'Teresa', 'Wojciech', 'Ziemowit'];
+
     this.samochody = [
-      {
-        marka: 'Audi',
-        model: 'RS7',
-        rok: 2020
-      },
-      {
-        marka: 'Mercedes',
-        model: 'GT',
-        rok: 1998
-      },
-      {
-        marka: 'Mercedes',
-        model: 'Klasa G',
-        rok: 2018
-      },
-      {
-        marka: 'BMW',
-        model: 'Seria 3',
-        rok: 2020
-      },
-      {
-        marka: 'Nissan',
-        model: '370z',
-        rok: 2019
-      }
+      new Samochod('Audi', 'RS7', 2020),
+      new Samochod('BMW', 'Seria 3', 2021),
+      new Samochod('Mercedes', 'Seria 3', 2017),
+      new Samochod('Austin', 'Martin', 2003),
+      new Samochod('Nissan', 'Patrol', 1998)
     ];
   }
 
@@ -60,10 +41,10 @@ export class AppComponent {
 
   onAddSamochod(samochod: Samochod) {
     
-    let areObjectEquals = (obj1) =>
-      obj1.marka == samochod.marka &&
-      obj1.model == samochod.model &&
-      obj1.rok == samochod.rok;
+    let areObjectEquals = (obj1: Samochod) =>
+      obj1.marka === samochod.marka &&
+      obj1.model === samochod.model &&
+      obj1.rok === +samochod.rok;
 
     if (this.samochody.some(areObjectEquals, samochod.marka && samochod.model && samochod.rok)) {
       this.isInArray = true;
