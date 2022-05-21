@@ -58,13 +58,12 @@ export class AppComponent {
     this.studenci.splice(index, 1);
   }
 
-
   onAddSamochod(samochod: Samochod) {
     
-    var areObjectEquals = (obj1) =>
-      obj1.marka === samochod.marka &&
-      obj1.model === samochod.model &&
-      obj1.rok === samochod.rok;
+    let areObjectEquals = (obj1) =>
+      obj1.marka == samochod.marka &&
+      obj1.model == samochod.model &&
+      obj1.rok == samochod.rok;
 
     if (this.samochody.some(areObjectEquals, samochod.marka && samochod.model && samochod.rok)) {
       this.isInArray = true;
@@ -73,7 +72,7 @@ export class AppComponent {
       this.isInArray = false;
       this.samochody.push(samochod);
     }
-
+ 
   }
   onUsunSamochod(index: number) {
     this.isInArray = false;
